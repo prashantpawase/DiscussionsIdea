@@ -16,6 +16,9 @@ package pageObjects;
         import ErrorMsg.Error;
         import highlight.highlightElement;
 
+        import org.openqa.selenium.interactions.Actions;
+
+
 public class EditAnswers
 {
 
@@ -26,6 +29,11 @@ public class EditAnswers
 
         System.out.println(driver.getTitle());
 
+        Actions actt = new Actions(driver);
+
+        actt.keyDown(Keys.LEFT_CONTROL).keyDown(Keys.LEFT_SHIFT).perform();
+
+
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
         WebElement EdtA = driver.findElement(By.xpath("//i[@class='glyphicon glyphicon-edit']"));
@@ -33,6 +41,10 @@ public class EditAnswers
         EdtA.click();
 
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+        actt.keyUp(Keys.LEFT_CONTROL).keyDown(Keys.LEFT_SHIFT).perform();
+
+        String windowHandlee = driver.getWindowHandle();
 
         WebElement Ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
         highlightElement.highLightElement(driver, Ans);

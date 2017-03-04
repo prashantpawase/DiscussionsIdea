@@ -8,7 +8,7 @@ package automationFramework;
 //Prashant Pawase via XuBuntu
 //Prashant
 //Prashant Pawase via KuBuntu
-//changes done from KuBuntu
+//Changes done from KuBuntu
 //Switched to Intellij
 
         import java.util.List;
@@ -41,7 +41,7 @@ public class Prashant
         driver.manage().window().maximize();
         Thread.sleep(1000);
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS );
+
 
         WebElement city = driver.findElement(By.xpath("//a[@data-url='delhi']"));
         highlightElement.highLightElement(driver, city);

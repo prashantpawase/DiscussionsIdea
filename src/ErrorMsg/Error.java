@@ -185,6 +185,7 @@ public class Error
 
     public static WebElement editAerror(WebDriver driver)
     {
+        driver.manage().timeouts().implicitlyWait(50 , TimeUnit.SECONDS);
 
         WebElement update = driver.findElement(By.xpath("//button[@type='submit']"));
         highlightElement.highLightElement(driver, update);
