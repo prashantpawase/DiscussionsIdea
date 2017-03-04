@@ -18,29 +18,34 @@ public class UDvote
     public static WebElement pUDvote(WebDriver driver)
     {
 
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-        WebElement upvote = driver.findElement(By.xpath("//i[@class='fa fa-thumbs-o-up']"));
-        upvote.click();
+    WebElement upvote = driver.findElement(By.xpath("//i[@class='fa fa-thumbs-o-up']"));
+    upvote.click();
 
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-        WebElement upvoteC = driver.findElement(By.xpath("//span[@class='vote-counter']"));
-        System.out.println(upvoteC.getText());
+    WebElement upvoteC = driver.findElement(By.xpath("//span[@class='vote-counter']"));
+    System.out.println(upvoteC.getText());
 
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-        WebElement downvote = driver.findElement(By.xpath("//i[@class='fa fa-thumbs-o-down']"));
-        downvote.click();
 
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-        WebElement downvoteC = driver.findElement(By.xpath("//span[@class='vote-counter']"));
-        System.out.println(downvoteC.getText());
 
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+    WebElement downvote = driver.findElement(By.xpath("//i[@class='fa fa-thumbs-down']"));
+    downvote.click();
+
+    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+    WebElement downvoteC = driver.findElement(By.xpath("//span[@class='vote-counter']"));
+    System.out.println(downvoteC.getText());
+
+    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
         return null;
 
