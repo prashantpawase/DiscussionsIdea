@@ -41,6 +41,7 @@ public class Prashant
         driver.manage().window().maximize();
         Thread.sleep(1000);
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS );
 
         WebElement city = driver.findElement(By.xpath("//a[@data-url='delhi']"));
         highlightElement.highLightElement(driver, city);
