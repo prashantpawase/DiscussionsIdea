@@ -51,7 +51,7 @@ public class EditAnswers
         Ans.click();
         Ans.sendKeys(Keys.CONTROL + "a");
         Ans.sendKeys(Keys.DELETE);
-        Ans.sendKeys("Testing Answer Editing For Questions in Discussions");
+        Ans.sendKeys("Answer Editing For Questions in Discussions");
 
 
         driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
