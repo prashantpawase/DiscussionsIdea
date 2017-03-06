@@ -46,19 +46,46 @@ public class EditAnswers
 
         String windowHandlee = driver.getWindowHandle();
 
-        WebElement Ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
-        highlightElement.highLightElement(driver, Ans);
-        Ans.click();
-        Ans.sendKeys(Keys.CONTROL + "a");
-        Ans.sendKeys(Keys.DELETE);
-        Ans.sendKeys("Answer Editing For Questions in Discussions");
+        try {
+            WebElement Ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
+            highlightElement.highLightElement(driver, Ans);
+            Ans.click();
+            Ans.sendKeys(Keys.CONTROL + "a");
+            Ans.sendKeys(Keys.DELETE);
+            Ans.sendKeys("");
 
 
-        driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-        Error.editAerror(driver);
+            Error.editAerror(driver);
 
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        }
+        catch(Exception e)
+        {
+            System.out.println("");
+        }
+
+
+        try {
+            WebElement Ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
+            highlightElement.highLightElement(driver, Ans);
+            Ans.click();
+            Ans.sendKeys(Keys.CONTROL + "a");
+            Ans.sendKeys(Keys.DELETE);
+            Ans.sendKeys("Answer Editing For Questions in Discussions");
+
+
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+            Error.editAerror(driver);
+
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        }
+        catch(Exception e)
+        {
+            System.out.println("");
+        }
 
 
         return null;

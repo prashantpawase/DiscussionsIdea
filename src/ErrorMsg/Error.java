@@ -38,7 +38,16 @@ public class Error
 
 
 
-        if(txt.equals("Question posted successfully"))
+        if(txt.equals("question-title field is required"))
+        {
+            System.out.println("Keep All Fields Blank");
+            System.out.println("\u001B[41mfalse\u001B[0m");
+            System.out.println("\u001B[41mError Message\u001B[0m ---> " + erromsg.getText());
+
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+        }
+        else if(txt.equals("Question posted successfully"))
         {
             System.out.println("\033[32;1;2mtrue");
             System.out.println("\033[32;1;2mSuccess Message\033[0m ---> " + erromsg.getText());
@@ -58,8 +67,8 @@ public class Error
         else
         {
 
-            System.out.println("\033[31;1mfalse\033[0m");
-            System.out.println("\033[31;1mError Message\033[0m ---> " + erromsg.getText());
+            System.out.println("\u001B[41mfalse\u001B[0m");
+            System.out.println("\u001B[41mError Message\u001B[0m ---> " + erromsg.getText());
 
             driver.close();
 
@@ -72,9 +81,6 @@ public class Error
 
         return null;
     }
-
-
-
 
 
 
@@ -92,8 +98,16 @@ public class Error
         String txt = erromsg.getText();
 
 
+        if(txt.equals("question-title field is required"))
+        {
+            System.out.println("Keep All Fields Blank");
+            System.out.println("\u001B[41mfalse\u001B[0m");
+            System.out.println("\u001B[41mError Message\u001B[0m ---> " + erromsg.getText());
 
-        if(txt.equals("Question has been updated"))
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+        }
+        else if(txt.equals("Question has been updated"))
         {
             System.out.println("\033[32;1;2mtrue");
             System.out.println("\033[32;1;2mSuccess Message\033[0m ---> " + erromsg.getText());
@@ -112,8 +126,8 @@ public class Error
         else
         {
 
-            System.out.println("\033[31;1mfalse\033[0m");
-            System.out.println("\033[31;1mError Message\033[0m ---> " + erromsg.getText());
+            System.out.println("\u001B[41mfalse\u001B[0m");
+            System.out.println("\u001B[41mError Message\u001B[0m ---> " + erromsg.getText());
 
             driver.close();
 
@@ -140,9 +154,16 @@ public class Error
         highlightElement.highLightElement(driver, erromsg);
         String txt = erromsg.getText();
 
+        if(txt.equals("description field is required"))
+        {
+            System.out.println("Keep All Fields Blank");
+            System.out.println("\u001B[41mfalse\u001B[0m");
+            System.out.println("\u001B[41mError Message\u001B[0m ---> " + erromsg.getText());
 
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-        if(txt.equals("Answer posted successfully"))
+        }
+        else if(txt.equals("Answer posted successfully"))
         {
             System.out.println("\033[32;1;2mtrue");
             System.out.println("\033[32;1;2mSuccess Message\033[0m ---> " + erromsg.getText());
@@ -168,8 +189,8 @@ public class Error
         else
         {
 
-            System.out.println("\033[31;1mfalse\033[0m");
-            System.out.println("\033[31;1mError Message\033[0m ---> " + erromsg.getText());
+            System.out.println("\u001B[41mfalse\u001B[0m");
+            System.out.println("\u001B[41mError Message\u001B[0m ---> " + erromsg.getText());
 
             driver.close();
 
@@ -196,9 +217,22 @@ public class Error
         highlightElement.highLightElement(driver, erromsg);
         String txt = erromsg.getText();
 
+        if(txt.equals("answer-description field is required"))
+        {
+            System.out.println("Keep All Fields Blank");
+      //      System.out.println("\033[32;1;2mfalse");
+       //     System.out.println("\u001B[41mfalse\u001B[0m");
+       //     System.out.println("\033[32;1;2mError Message\033[0m ---> " + erromsg.getText());
+
+            System.out.println("\u001B[41mfalse\u001B[0m");
+            System.out.println("\u001B[41mError Message\u001B[0m ---> " + erromsg.getText());
 
 
-        if(txt.equals("Your answer has been updated"))
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+        }
+
+        else if(txt.equals("Your answer has been updated"))
         {
             System.out.println("\033[32;1;2mtrue");
             System.out.println("\033[32;1;2mSuccess Message\033[0m ---> " + erromsg.getText());
@@ -218,8 +252,8 @@ public class Error
         else
         {
 
-            System.out.println("\033[31;1mfalse\033[0m");
-            System.out.println("\033[31;1mError Message\033[0m ---> " + erromsg.getText());
+            System.out.println("\u001B[41mfalse\u001B[0m");
+            System.out.println("\u001B[41mError Message\u001B[0m ---> " + erromsg.getText());
 
 
 

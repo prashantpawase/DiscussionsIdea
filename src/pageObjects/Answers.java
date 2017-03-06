@@ -23,34 +23,76 @@ public class Answers
     public static WebElement panswers(WebDriver driver)
     {
 
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        try {
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-        WebElement Wans = driver.findElement(By.xpath("//a[@data-action='answer-question']"));
-        Wans.click();
-
-
-        Actions actt = new Actions(driver);
-
-        actt.keyDown(Keys.LEFT_CONTROL).keyDown(Keys.LEFT_SHIFT).perform();
-
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-
-        WebElement ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
-        highlightElement.highLightElement(driver, ans);
-        ans.click();
-        ans.sendKeys("Indian Education is good at certain points");
-
-        WebElement verify = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
-        System.out.println(verify.getText());
+            WebElement Wans = driver.findElement(By.xpath("//a[@data-action='answer-question']"));
+            Wans.click();
 
 
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+            Actions actt = new Actions(driver);
 
-        Error.Aerror(driver);
+            actt.keyDown(Keys.LEFT_CONTROL).keyDown(Keys.LEFT_SHIFT).perform();
 
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+            WebElement ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
+            highlightElement.highLightElement(driver, ans);
+            ans.click();
+            ans.sendKeys("");
+
+            WebElement verify = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
+            System.out.println(verify.getText());
+
+
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+            Error.Aerror(driver);
+
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        }
+        catch(Exception e)
+        {
+            System.out.println("");
+        }
+
+        try {
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+            WebElement Wans = driver.findElement(By.xpath("//a[@data-action='answer-question']"));
+            Wans.click();
+
+
+            Actions actt = new Actions(driver);
+
+            actt.keyDown(Keys.LEFT_CONTROL).keyDown(Keys.LEFT_SHIFT).perform();
+
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+            WebElement ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
+            highlightElement.highLightElement(driver, ans);
+            ans.click();
+            ans.sendKeys("Indian Education is good at certain points");
+
+            WebElement verify = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
+            System.out.println(verify.getText());
+
+
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+            Error.Aerror(driver);
+
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        }
+        catch(Exception e)
+        {
+            System.out.println("");
+        }
+
 
         return null;
     }
