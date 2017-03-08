@@ -20,6 +20,7 @@ package automationFramework;
         import org.openqa.selenium.firefox.FirefoxDriver;
         import appModules.SignIn_Action;
         import highlight.highlightElement;
+        import org.openqa.selenium.support.ui.ExpectedCondition;
         import pageObjects.Answers;
         import pageObjects.EditAnswers;
         import pageObjects.EditQuestions;
@@ -27,6 +28,8 @@ package automationFramework;
         import pageObjects.Questions;
         import pageObjects.UDvote;
         import utility.Constant;
+        import org.openqa.selenium.support.ui.WebDriverWait;
+        import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Prashant
 {
@@ -43,7 +46,10 @@ public class Prashant
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
 
-        WebElement city = driver.findElement(By.xpath("//a[@data-url='delhi']"));
+        WebElement city = (new WebDriverWait(driver , 10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-url='delhi']")));
+
+     //   WebElement city = driver.findElement(By.xpath("//a[@data-url='delhi']"));
         highlightElement.highLightElement(driver, city);
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         city.click();
@@ -58,7 +64,9 @@ public class Prashant
         Thread.sleep(1000);
 
 
-        WebElement discussions = driver.findElement(By.xpath("//a[@href='http://www.edunuts.com/discussions']"));
+        WebElement discussions = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@href='http://www.edunuts.com/discussions']")));
+     //   WebElement discussions = driver.findElement(By.xpath("//a[@href='http://www.edunuts.com/discussions']"));
 
         Thread.sleep(1000);
         highlightElement.highLightElement(driver, discussions);

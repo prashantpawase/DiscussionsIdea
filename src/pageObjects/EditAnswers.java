@@ -18,6 +18,8 @@ package pageObjects;
 
         import org.openqa.selenium.interactions.Actions;
 
+        import org.openqa.selenium.support.ui.WebDriverWait;
+        import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class EditAnswers
 {
@@ -36,7 +38,11 @@ public class EditAnswers
 
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-        WebElement EdtA = driver.findElement(By.xpath("//i[@class='glyphicon glyphicon-edit']"));
+        WebElement EdtA = (new WebDriverWait(driver,10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//i[@class='glyphicon glyphicon-edit']")));
+
+
+     //   WebElement EdtA = driver.findElement(By.xpath("//i[@class='glyphicon glyphicon-edit']"));
         highlightElement.highLightElement(driver, EdtA);
         EdtA.click();
 
@@ -47,7 +53,12 @@ public class EditAnswers
         String windowHandlee = driver.getWindowHandle();
 
         try {
-            WebElement Ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
+
+           WebElement Ans = (new WebDriverWait(driver,10))
+                   .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[@id='answer-description_ifr']")));
+
+
+         //   WebElement Ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
             highlightElement.highLightElement(driver, Ans);
             Ans.click();
             Ans.sendKeys(Keys.CONTROL + "a");
@@ -68,7 +79,11 @@ public class EditAnswers
 
 
         try {
-            WebElement Ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
+
+            WebElement Ans = (new WebDriverWait(driver,10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[@id='answer-description_ifr']")));
+
+           // WebElement Ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
             highlightElement.highLightElement(driver, Ans);
             Ans.click();
             Ans.sendKeys(Keys.CONTROL + "a");

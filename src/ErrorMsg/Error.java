@@ -18,6 +18,10 @@ package ErrorMsg;
 
         import highlight.highlightElement;
 
+        import org.openqa.selenium.support.ui.ExpectedCondition;
+        import org.openqa.selenium.support.ui.ExpectedConditions;
+        import org.openqa.selenium.support.ui.WebDriverWait;
+
 public class Error
 
 {
@@ -27,12 +31,20 @@ public class Error
     public static WebElement Qerror(WebDriver driver)
     {
 
-        WebElement Submit = driver.findElement(By.xpath("//button[@type='submit']"));
+        WebElement Submit = (new WebDriverWait(driver,10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@type='submit']")));
+
+
+    //    WebElement Submit = driver.findElement(By.xpath("//button[@type='submit']"));
         highlightElement.highLightElement(driver, Submit);
         Submit.click();
 
 
-        WebElement erromsg =  driver.findElement(By.xpath("//span[@class='msg']"));
+        WebElement erromsg = (new WebDriverWait(driver,10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='msg']")));
+
+
+     //   WebElement erromsg =  driver.findElement(By.xpath("//span[@class='msg']"));
         highlightElement.highLightElement(driver, erromsg);
         String txt = erromsg.getText();
 
@@ -88,12 +100,20 @@ public class Error
     public static WebElement editQerror(WebDriver driver)
     {
 
-        WebElement update = driver.findElement(By.xpath("//button[@type='submit']"));
+        WebElement update = (new WebDriverWait(driver,10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@type='submit']")));
+
+
+
+    //    WebElement update = driver.findElement(By.xpath("//button[@type='submit']"));
         highlightElement.highLightElement(driver, update);
         update.click();
 
 
-        WebElement erromsg =  driver.findElement(By.xpath("//span[@class='msg']"));
+        WebElement erromsg = (new WebDriverWait(driver,10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='msg']")));
+
+      //  WebElement erromsg =  driver.findElement(By.xpath("//span[@class='msg']"));
         highlightElement.highLightElement(driver, erromsg);
         String txt = erromsg.getText();
 
@@ -145,12 +165,19 @@ public class Error
     public static WebElement Aerror(WebDriver driver)
     {
 
-        WebElement update = driver.findElement(By.xpath("//button[@type='submit']"));
+        WebElement update = (new WebDriverWait(driver,10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@type='submit']")));
+
+
+     //   WebElement update = driver.findElement(By.xpath("//button[@type='submit']"));
         highlightElement.highLightElement(driver, update);
         update.click();
 
 
-        WebElement erromsg =  driver.findElement(By.xpath("//span[@class='msg']"));
+        WebElement erromsg = (new WebDriverWait(driver,10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='msg']")));
+
+     //   WebElement erromsg =  driver.findElement(By.xpath("//span[@class='msg']"));
         highlightElement.highLightElement(driver, erromsg);
         String txt = erromsg.getText();
 
@@ -177,7 +204,11 @@ public class Error
 
             System.out.println(driver.getTitle());
 
-            WebElement Answer = driver.findElement(By.xpath("//div[@class='row question-answer']"));
+            WebElement Answer = (new WebDriverWait(driver,10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='row question-answer']")));
+
+
+          //  WebElement Answer = driver.findElement(By.xpath("//div[@class='row question-answer']"));
             System.out.println(Answer.getText());
 
 
@@ -208,12 +239,19 @@ public class Error
     {
         driver.manage().timeouts().implicitlyWait(50 , TimeUnit.SECONDS);
 
-        WebElement update = driver.findElement(By.xpath("//button[@type='submit']"));
+        WebElement update = (new WebDriverWait(driver,10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@type='submit']")));
+
+
+     //   WebElement update = driver.findElement(By.xpath("//button[@type='submit']"));
         highlightElement.highLightElement(driver, update);
         update.click();
 
 
-        WebElement erromsg =  driver.findElement(By.xpath("//span[@class='msg']"));
+        WebElement erromsg = (new WebDriverWait(driver,10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='msg']")));
+
+     //   WebElement erromsg =  driver.findElement(By.xpath("//span[@class='msg']"));
         highlightElement.highLightElement(driver, erromsg);
         String txt = erromsg.getText();
 
@@ -243,7 +281,11 @@ public class Error
 
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-            WebElement Answer = driver.findElement(By.xpath("//div[@class='row question-answer']"));
+            WebElement Answer = (new WebDriverWait(driver,10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='row question-answer']")));
+
+
+          //  WebElement Answer = driver.findElement(By.xpath("//div[@class='row question-answer']"));
             System.out.println(Answer.getText());
 
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);

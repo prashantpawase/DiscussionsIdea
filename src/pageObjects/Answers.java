@@ -17,6 +17,9 @@ package pageObjects;
         import ErrorMsg.Error;
         import highlight.highlightElement;
 
+        import org.openqa.selenium.support.ui.ExpectedConditions;
+        import org.openqa.selenium.support.ui.WebDriverWait;
+
 public class Answers
 {
 
@@ -27,7 +30,11 @@ public class Answers
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-            WebElement Wans = driver.findElement(By.xpath("//a[@data-action='answer-question']"));
+            WebElement Wans = (new WebDriverWait(driver,10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-action='answer-question']")));
+
+
+         //   WebElement Wans = driver.findElement(By.xpath("//a[@data-action='answer-question']"));
             Wans.click();
 
 
@@ -38,12 +45,20 @@ public class Answers
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-            WebElement ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
+            WebElement ans = (new WebDriverWait(driver,10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[@id='answer-description_ifr']")));
+
+
+         //   WebElement ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
             highlightElement.highLightElement(driver, ans);
             ans.click();
             ans.sendKeys("");
 
-            WebElement verify = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
+            WebElement verify = (new WebDriverWait(driver,10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[@id='answer-description_ifr']")));
+
+
+          //  WebElement verify = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
             System.out.println(verify.getText());
 
 
@@ -62,7 +77,11 @@ public class Answers
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-            WebElement Wans = driver.findElement(By.xpath("//a[@data-action='answer-question']"));
+            WebElement Wans = (new WebDriverWait(driver,10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-action='answer-question']")));
+
+
+         //   WebElement Wans = driver.findElement(By.xpath("//a[@data-action='answer-question']"));
             Wans.click();
 
 
@@ -73,12 +92,19 @@ public class Answers
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-            WebElement ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
+            WebElement ans = (new WebDriverWait(driver,10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[@id='answer-description_ifr']")));
+
+
+         //   WebElement ans = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
             highlightElement.highLightElement(driver, ans);
             ans.click();
             ans.sendKeys("Indian Education is good at certain points");
 
-            WebElement verify = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
+            WebElement verify = (new WebDriverWait(driver,10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[@id='answer-description_ifr']")));
+
+          //  WebElement verify = driver.findElement(By.xpath("//iframe[@id='answer-description_ifr']"));
             System.out.println(verify.getText());
 
 
