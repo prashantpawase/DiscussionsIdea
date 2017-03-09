@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.TimeUnit;
 
+import highlight.highlightElement;
 
 /**
  * Created by prashant on 8/3/17.
@@ -16,11 +17,12 @@ public class Agriculture
     public static WebElement agriculture(WebDriver driver) throws InterruptedException
     {
 
-        driver.manage().timeouts().implicitlyWait(50 , TimeUnit.SECONDS);
-
+            driver.manage().timeouts().implicitlyWait(50 , TimeUnit.SECONDS);
+            driver.navigate().to("http://www.edunuts.com");
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
             WebElement Agriculture = driver.findElement(By.xpath("//div[@class='higher agri']"));
-
+            highlightElement.highLightElement(driver,Agriculture);
             Agriculture.click();
             Thread.sleep(1000);
 
