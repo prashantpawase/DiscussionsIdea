@@ -17,6 +17,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.TimeUnit;
 
+import highlight.highlightElement;
 
 public class Law
 {
@@ -27,9 +28,9 @@ public class Law
         driver.manage().timeouts().implicitlyWait(50 , TimeUnit.SECONDS);
 
 
-        WebElement Agriculture = driver.findElement(By.xpath("//div[@class='higher low']"));
-
-        Agriculture.click();
+        WebElement Law = driver.findElement(By.xpath("//div[@class='higher low']"));
+        highlightElement.highLightElement(driver, Law);
+        Law.click();
         Thread.sleep(1000);
 
 

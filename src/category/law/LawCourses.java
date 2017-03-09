@@ -23,6 +23,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import highlight.highlightElement;
+
 public class LawCourses
 {
 
@@ -111,6 +113,7 @@ public class LawCourses
                     if(!driver.findElements(By.xpath("//h1[@class='fs24']")).isEmpty())
                     {
                         WebElement prashant = driver.findElement(By.xpath("//h1[@class='fs24']"));
+                        highlightElement.highLightElement(driver, prashant);
                         System.out.println(prashant.getText());
 
 

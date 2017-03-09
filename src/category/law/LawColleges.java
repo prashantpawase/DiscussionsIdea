@@ -13,7 +13,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import highlight.highlightElement;
 
 
 import java.util.ArrayList;
@@ -79,6 +79,7 @@ public class LawColleges
                 if(!driver.findElements(By.xpath("//h1[@class='fs24']")).isEmpty())
                 {
                     WebElement prashant = driver.findElement(By.xpath("//h1[@class='fs24']"));
+                    highlightElement.highLightElement(driver, prashant);
                     System.out.println(prashant.getText());
 
 
