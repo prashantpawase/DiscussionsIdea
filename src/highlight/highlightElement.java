@@ -30,7 +30,7 @@ public class highlightElement
             System.out.println(e.getMessage());
         }
 
-        js.executeScript("arguments[0].setAttribute('style','border: solid 2px white');", element);
+        js.executeScript("arguments[0].setAttribute('style','border: solid 2px red');", element);
 
     }
 }
