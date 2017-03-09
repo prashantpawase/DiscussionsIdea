@@ -11,25 +11,29 @@ package automationFramework;
 //Changes done from KuBuntu
 //Switched to Intellij
 
-        import java.util.List;
         import java.util.concurrent.TimeUnit;
 
+        import category.agriculture.Agriculture;
+        import category.law.Law;
         import org.openqa.selenium.By;
         import org.openqa.selenium.WebDriver;
         import org.openqa.selenium.WebElement;
         import org.openqa.selenium.firefox.FirefoxDriver;
-        import appModules.SignIn_Action;
         import highlight.highlightElement;
-        import org.openqa.selenium.support.ui.ExpectedCondition;
-        import pageObjects.Answers;
-        import pageObjects.EditAnswers;
-        import pageObjects.EditQuestions;
         import pageObjects.Home_Page;
-        import pageObjects.Questions;
-        import pageObjects.UDvote;
         import utility.Constant;
         import org.openqa.selenium.support.ui.WebDriverWait;
         import org.openqa.selenium.support.ui.ExpectedConditions;
+
+        import appModules.SignIn_Action;
+        import pageObjects.Home_Page;
+        import pageObjects.Answers;
+        import pageObjects.EditAnswers;
+        import pageObjects.Questions;
+        import pageObjects.EditQuestions;
+        import pageObjects.UDvote;
+        import vote.Upvote;
+
 
 public class Prashant
 {
@@ -62,6 +66,8 @@ public class Prashant
         System.out.println(driver.getTitle());
 
         Thread.sleep(1000);
+
+
 
 
         WebElement discussions = (new WebDriverWait(driver, 10))
@@ -128,7 +134,7 @@ public class Prashant
 
         try
         {
-            UDvote.pUDvote(driver).click();
+            Upvote.pUpvote(driver).click();
             Thread.sleep(1000);
         }
         catch(Exception e)
@@ -138,6 +144,30 @@ public class Prashant
 
 
 
+Thread.sleep(1000);
+
+        try
+        {
+
+            Agriculture.agriculture(driver).click();
+            Thread.sleep(1000);
+        }
+        catch (Exception e)
+        {
+            System.out.println("");
+        }
+/*
+        try{
+            driver.navigate().to("http://www.edunuts.com");
+            Law.law(driver).click();
+            Thread.sleep(1000);
+        }
+        catch(Exception e)
+        {
+            System.out.println("");
+        }
+
+*/
         Thread.sleep(1000);
 
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
