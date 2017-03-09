@@ -32,6 +32,7 @@ package automationFramework;
         import pageObjects.Questions;
         import pageObjects.EditQuestions;
         import pageObjects.UDvote;
+        import vote.Downvote;
         import vote.Upvote;
 
 
@@ -135,6 +136,8 @@ public class Prashant
         try
         {
             Upvote.pUpvote(driver).click();
+            Thread.sleep(1000);
+            Downvote.pDownvote(driver).click();
             Thread.sleep(1000);
         }
         catch(Exception e)
