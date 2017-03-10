@@ -137,6 +137,16 @@ public class Prashant
         {
             Upvote.pUpvote(driver).click();
             Thread.sleep(1000);
+
+        }
+        catch(Exception e)
+        {
+            System.out.println("");
+        }
+
+
+        try
+        {
             Downvote.pDownvote(driver).click();
             Thread.sleep(1000);
         }
@@ -144,7 +154,6 @@ public class Prashant
         {
             System.out.println("");
         }
-
 
 
 Thread.sleep(1000);
