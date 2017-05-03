@@ -69,6 +69,7 @@ public class Error
             act.keyUp(Keys.LEFT_CONTROL).keyDown(Keys.LEFT_SHIFT).perform();
 
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
 
             WebElement Verify = driver.findElement(By.xpath("//h4[@class='question-title']"));
             System.out.println(Verify.getText());
