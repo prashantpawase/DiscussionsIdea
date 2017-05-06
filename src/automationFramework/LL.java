@@ -16,15 +16,28 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 public class LL
 {
     public static void main(String[] args) throws IOException
     {
-        WebDriver driver = new FirefoxDriver();
+
+        System.setProperty("webdriver.chrome.driver", "/home/edn/Git-Repo/External-Jars/chromedriver");
+        WebDriver driver = new ChromeDriver();
+
         driver.manage().window().maximize();
-        driver.get("http://www.edunuts.com");
+
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        driver.navigate().to("http://www.edunuts.com");
+
+        driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
+
+        WebElement city = driver.findElement(By.xpath("//a[@data-url='delhi']"));
+        city.click();
 
         List<WebElement> total_links = driver.findElements(By.tagName("a"));
         System.out.println("Total Number of Links found on page = " + total_links.size());
@@ -63,7 +76,7 @@ public class LL
             }
 
         }
-        driver.close();
+      //  driver.close();
     }
 
     public static boolean getResponseCode(String chkurl)

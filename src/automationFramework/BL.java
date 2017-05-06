@@ -20,6 +20,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+
 public class BL
 {
 
@@ -30,8 +35,18 @@ public class BL
     public void setUp()
     {
 
-        driver = new FirefoxDriver();
-        driver.get("http://www.edunuts.com");
+        System.setProperty("webdriver.chrome.driver", "/home/edn/Git-Repo/External-Jars/chromedriver");
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().window().maximize();
+
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        driver.navigate().to("http://www.edunuts.com");
+
+        driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
+
+        WebElement city = driver.findElement(By.xpath("//a[@data-url='delhi']"));
+        city.click();
     }
 
     @Test
