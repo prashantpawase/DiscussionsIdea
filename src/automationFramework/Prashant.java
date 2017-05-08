@@ -16,8 +16,11 @@ package automationFramework;
         import category.agriculture.Agriculture;
         import category.law.Law;
         import org.openqa.selenium.By;
+        import org.openqa.selenium.Keys;
         import org.openqa.selenium.WebDriver;
         import org.openqa.selenium.WebElement;
+        import org.openqa.selenium.chrome.ChromeDriver;
+        import org.openqa.selenium.chrome.ChromeOptions;
         import org.openqa.selenium.firefox.FirefoxDriver;
         import highlight.highlightElement;
         import pageObjects.Home_Page;
@@ -34,7 +37,7 @@ package automationFramework;
         import pageObjects.UDvote;
         import vote.Downvote;
         import vote.Upvote;
-
+        import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Prashant
 {
@@ -43,12 +46,36 @@ public class Prashant
 
     public static void main(String args[]) throws Exception
     {
-        System.setProperty("webdriver.gecko.driver", "/home/prashant/Prashant/External-Jars/geckodriver-v0.14.0-linux64.tar.gz/geckodriver.exe");
+       /* System.setProperty("webdriver.gecko.driver", "/home/prashant/Prashant/External-Jars/geckodriver-v0.14.0-linux64.tar.gz/geckodriver.exe");
         driver = new FirefoxDriver();
+*/
+
+
+
+
+        System.setProperty("webdriver.chrome.driver", "/home/edn/Git-Repo/External-Jars/chromedriver");
+        driver = new ChromeDriver();
+
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("disable-infobars");
+        driver = new ChromeDriver(options);
+
+
+/*
+
+     System.setProperty("webdriver.gecko.driver","\\home\\edn\\Git-Repo\\External-Jars\\geckodriver-v0.16.1-linux64.tar.gz\\geckodriver.exe");
+     driver = new FirefoxDriver();
+*/
+
+
+
+     Thread.sleep(1000);
+
         driver.get(Constant.URL);
         driver.manage().window().maximize();
-        Thread.sleep(1000);
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+
 
 
         WebElement city = (new WebDriverWait(driver , 10))
@@ -58,6 +85,7 @@ public class Prashant
         highlightElement.highLightElement(driver, city);
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         city.click();
+
 
         Thread.sleep(1000);
 
