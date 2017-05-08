@@ -23,6 +23,7 @@ public class Agriculture
 
             WebElement Agriculture = driver.findElement(By.xpath("//div[@class='higher agri']"));
             highlightElement.highLightElement(driver,Agriculture);
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
             Agriculture.click();
             Thread.sleep(1000);
 

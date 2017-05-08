@@ -25,11 +25,11 @@ public class LogIn_Page
 
     public static WebElement txtbx_UserName(WebDriver driver)
     {
-        element = (new WebDriverWait(driver,10))
+      /*  element = (new WebDriverWait(driver,10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@placeholder='Username / Email / Mobile']")));
+*/
 
-
-      //  element = driver.findElement(By.xpath("//input[@placeholder='Username / Email / Mobile']"));
+        element = driver.findElement(By.xpath("//input[@placeholder='Username / Email / Mobile']"));
         //	highLightElement(driver,element);
 
         highlightElement.highLightElement(driver, element);
@@ -39,11 +39,11 @@ public class LogIn_Page
 
     public static WebElement txtbx_Password(WebDriver driver)
     {
-        element = (new WebDriverWait(driver,10))
+     /*   element = (new WebDriverWait(driver,10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@placeholder='Password']")));
+*/
 
-
-     //   element = driver.findElement(By.xpath("//input[@placeholder='Password']"));
+       element = driver.findElement(By.xpath("//input[@placeholder='Password']"));
         //	highLightElement(driver,element);
 
         highlightElement.highLightElement(driver, element);
@@ -54,10 +54,10 @@ public class LogIn_Page
     public static WebElement btn_LogIn(WebDriver driver)
     {
 
-        element = (new WebDriverWait(driver,10))
+        /*element = (new WebDriverWait(driver,10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@type='submit']")));
-
-        //   element = driver.findElement(By.xpath("//button[@type='submit']"));
+*/
+           element = driver.findElement(By.xpath("//button[@type='submit']"));
         //	highLightElement(driver,element);
 
         highlightElement.highLightElement(driver, element);

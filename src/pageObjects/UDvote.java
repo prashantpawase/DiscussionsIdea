@@ -33,10 +33,10 @@ public class UDvote
             driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
 
-            WebElement upvoteC = (new WebDriverWait(driver,10))
+          /*  WebElement upvoteC = (new WebDriverWait(driver,10))
                     .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='vote-counter']")));
-
-         //   WebElement upvoteC = driver.findElement(By.xpath("//span[@class='vote-counter']"));
+*/
+            WebElement upvoteC = driver.findElement(By.xpath("//span[@class='vote-counter']"));
             System.out.println("\033[32;1;2mUpVote\033[0m --->" + upvoteC.getText());
 
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);

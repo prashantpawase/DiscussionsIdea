@@ -53,20 +53,20 @@ public class Prashant
 
 
 
-        System.setProperty("webdriver.chrome.driver", "/home/edn/Git-Repo/External-Jars/chromedriver");
-        driver = new ChromeDriver();
+   /*     System.setProperty("webdriver.chrome.driver", "/home/edn/Git-Repo/External-Jars/chromedriver");
+   //     driver = new ChromeDriver();
 
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("disable-infobars");
         driver = new ChromeDriver(options);
+*/
 
 
-/*
 
      System.setProperty("webdriver.gecko.driver","\\home\\edn\\Git-Repo\\External-Jars\\geckodriver-v0.16.1-linux64.tar.gz\\geckodriver.exe");
      driver = new FirefoxDriver();
-*/
+
 
 
 
@@ -78,10 +78,10 @@ public class Prashant
 
 
 
-        WebElement city = (new WebDriverWait(driver , 10))
+     /*   WebElement city = (new WebDriverWait(driver , 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-url='delhi']")));
-
-     //   WebElement city = driver.findElement(By.xpath("//a[@data-url='delhi']"));
+*/
+        WebElement city = driver.findElement(By.xpath("//a[@data-url='delhi']"));
         highlightElement.highLightElement(driver, city);
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         city.click();
@@ -97,7 +97,7 @@ public class Prashant
         Thread.sleep(1000);
 
 
-
+/*
 
         WebElement discussions = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@href='http://www.edunuts.com/discussions']")));
@@ -182,7 +182,7 @@ public class Prashant
         {
             System.out.println("");
         }
-
+*/
 
 Thread.sleep(1000);
 

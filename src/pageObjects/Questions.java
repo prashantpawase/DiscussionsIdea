@@ -26,11 +26,11 @@ public class Questions {
 
         try {
 
-            WebElement askQ = (new WebDriverWait(driver,10))
+         /*   WebElement askQ = (new WebDriverWait(driver,10))
                     .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-action='ask-question']")));
+*/
 
-
-         //   WebElement askQ = driver.findElement(By.xpath("//a[@data-action='ask-question']"));
+            WebElement askQ = driver.findElement(By.xpath("//a[@data-action='ask-question']"));
             highlightElement.highLightElement(driver, askQ);
             askQ.click();
 
@@ -54,11 +54,11 @@ public class Questions {
 
         try {
 
-            WebElement askQ = (new WebDriverWait(driver,10))
+           /* WebElement askQ = (new WebDriverWait(driver,10))
                     .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-action='ask-question']")));
+*/
 
-
-           // WebElement askQ = driver.findElement(By.xpath("//a[@data-action='ask-question']"));
+            WebElement askQ = driver.findElement(By.xpath("//a[@data-action='ask-question']"));
             highlightElement.highLightElement(driver, askQ);
             askQ.click();
 
@@ -67,19 +67,19 @@ public class Questions {
 
             act.keyDown(Keys.LEFT_CONTROL).keyDown(Keys.LEFT_SHIFT).perform();
 
-            WebElement title = (new WebDriverWait(driver,10))
+          /*  WebElement title = (new WebDriverWait(driver,10))
                     .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='question-title']")));
-
-          //  WebElement title = driver.findElement(By.xpath("//input[@id='question-title']"));
+*/
+            WebElement title = driver.findElement(By.xpath("//input[@id='question-title']"));
             highlightElement.highLightElement(driver, title);
             title.click();
             title.sendKeys("What you think about Education in India ?");
 
 
-            WebElement ds = (new WebDriverWait(driver,10))
+          /*  WebElement ds = (new WebDriverWait(driver,10))
                     .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='question-title']")));
-
-          //  WebElement ds = driver.findElement(By.xpath("//input[@id='question-title']"));
+*/
+            WebElement ds = driver.findElement(By.xpath("//input[@id='question-title']"));
             highlightElement.highLightElement(driver, ds);
             ds.click();
             ds.sendKeys(Keys.TAB);
@@ -88,20 +88,22 @@ public class Questions {
             driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
 
-            WebElement desc = (new WebDriverWait(driver,10))
+          /*  WebElement desc = (new WebDriverWait(driver,10))
                     .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[@id='question-description_ifr']")));
-
-         //   WebElement desc = driver.findElement(By.xpath("//iframe[@id='question-description_ifr']"));
+*/
+            WebElement desc = driver.findElement(By.xpath("//iframe[@id='question-description_ifr']"));
             highlightElement.highLightElement(driver, desc);
             desc.click();
             desc.sendKeys("Education in India");
 
+/*
 
             WebElement topics = (new WebDriverWait(driver,10))
                     .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@placeholder='Topics (example: DU, learning, philosophy)']")));
+*/
 
 
-        //    WebElement topics = driver.findElement(By.xpath("//input[@placeholder='Topics (example: DU, learning, philosophy)']"));
+            WebElement topics = driver.findElement(By.xpath("//input[@placeholder='Topics (example: DU, learning, philosophy)']"));
             highlightElement.highLightElement(driver, topics);
             topics.click();
             topics.sendKeys("education");

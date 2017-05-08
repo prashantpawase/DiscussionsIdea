@@ -31,20 +31,20 @@ public class Error
     public static WebElement Qerror(WebDriver driver)
     {
 
-        WebElement Submit = (new WebDriverWait(driver,10))
+    /*    WebElement Submit = (new WebDriverWait(driver,10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@type='submit']")));
+*/
 
-
-    //    WebElement Submit = driver.findElement(By.xpath("//button[@type='submit']"));
+        WebElement Submit = driver.findElement(By.xpath("//button[@type='submit']"));
         highlightElement.highLightElement(driver, Submit);
         Submit.click();
 
 
-        WebElement erromsg = (new WebDriverWait(driver,10))
+     /*   WebElement erromsg = (new WebDriverWait(driver,10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='msg']")));
+*/
 
-
-     //   WebElement erromsg =  driver.findElement(By.xpath("//span[@class='msg']"));
+        WebElement erromsg =  driver.findElement(By.xpath("//span[@class='msg']"));
         highlightElement.highLightElement(driver, erromsg);
         String txt = erromsg.getText();
 
