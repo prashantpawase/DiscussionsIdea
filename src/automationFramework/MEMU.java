@@ -27,7 +27,8 @@ public class MEMU
 //  DeviceName = "Samsung Galaxy S4";
 //  DeviceName = "Samsung Galaxy Note 3";
 
-        DeviceName = "Apple iPhone 5";
+          DeviceName = "Apple iPhone 5";
+//        DeviceName = "Apple iPhone 6";
 
 
         System.setProperty("webdriver.chrome.driver", "/home/edn/Git-Repo/External-Jars/chromedriver");
@@ -44,7 +45,8 @@ public class MEMU
         WebDriver driver = new ChromeDriver(capabilities);
 
         driver.manage().window().maximize();
-        driver.navigate().to("http://www.edunuts.com");
+        //  driver.navigate().to("http://www.edunuts.com");
+          driver.navigate().to("http://www.bigradar.io");
 
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
