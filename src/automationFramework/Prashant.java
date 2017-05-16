@@ -13,6 +13,7 @@ package automationFramework;
 
         import java.util.concurrent.TimeUnit;
 
+
         import category.agriculture.Agriculture;
         import category.law.Law;
         import org.openqa.selenium.By;
@@ -35,6 +36,7 @@ package automationFramework;
         import pageObjects.Questions;
         import pageObjects.EditQuestions;
         import pageObjects.UDvote;
+        import utility.Mobile;
         import vote.Downvote;
         import vote.Upvote;
         import org.openqa.selenium.remote.DesiredCapabilities;
@@ -69,9 +71,9 @@ public class Prashant
      driver = new FirefoxDriver();
 */
 
-
+/*
         System.setProperty("webdriver.chrome.driver", "/home/edn/Git-Repo/External-Jars/chromedriver");
-
+        WebDriver driver = new ChromeDriver();
 
      Thread.sleep(1000);
 
@@ -84,10 +86,33 @@ public class Prashant
      /*   WebElement city = (new WebDriverWait(driver , 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-url='delhi']")));
 */
+/*
         WebElement city = driver.findElement(By.xpath("//a[@data-url='delhi']"));
         highlightElement.highLightElement(driver, city);
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         city.click();
+*/
+
+
+Mobile.MM().click();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         Thread.sleep(1000);
