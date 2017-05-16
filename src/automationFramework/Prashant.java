@@ -71,11 +71,11 @@ public class Prashant
      driver = new FirefoxDriver();
 */
 
-/*
+
         System.setProperty("webdriver.chrome.driver", "/home/edn/Git-Repo/External-Jars/chromedriver");
         WebDriver driver = new ChromeDriver();
 
-     Thread.sleep(1000);
+        Thread.sleep(1000);
 
         driver.get(Constant.URL);
         driver.manage().window().maximize();
@@ -86,32 +86,11 @@ public class Prashant
      /*   WebElement city = (new WebDriverWait(driver , 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-url='delhi']")));
 */
-/*
+
         WebElement city = driver.findElement(By.xpath("//a[@data-url='delhi']"));
         highlightElement.highLightElement(driver, city);
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         city.click();
-*/
-
-
-Mobile.MM().click();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
