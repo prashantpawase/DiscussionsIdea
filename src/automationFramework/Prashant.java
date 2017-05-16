@@ -63,11 +63,14 @@ public class Prashant
 */
 
 
+/*
 
      System.setProperty("webdriver.gecko.driver","\\home\\edn\\Git-Repo\\External-Jars\\geckodriver-v0.16.1-linux64.tar.gz\\geckodriver.exe");
      driver = new FirefoxDriver();
+*/
 
 
+        System.setProperty("webdriver.chrome.driver", "/home/edn/Git-Repo/External-Jars/chromedriver");
 
 
      Thread.sleep(1000);
