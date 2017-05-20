@@ -57,8 +57,8 @@ public class Mobile
         WebDriver driver = new ChromeDriver(capabilities);
 
         driver.manage().window().maximize();
-          driver.navigate().to("http://www.edunuts.com");
-     //   driver.navigate().to("http://www.bigradar.io");
+     //   driver.navigate().to("http://www.edunuts.com");
+          driver.navigate().to("http://www.bigradar.io");
 
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
@@ -66,6 +66,7 @@ public class Mobile
         city.click();
 
         return null;
+
     }
 
 
